@@ -1,0 +1,26 @@
+﻿@model Forum95.Models.RegisterAccount;
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<div class="d-flex flex-column min-vh-100 justify-content-center align-items-center text-center" style="height:75vh">
+    <form asp-action="SingUp" asp-controller="Account" asp-anti-forgery="true" >
+        <div class="validation" asp-validation-summary="ModelOnly"></div>
+        <div >
+            <div class="form-group ">
+                <label asp-for=@Model.Name class="text-primary">Enter your nick name</label><br />
+                <input type="text" asp-for=@Model.Name />
+                <span asp-validation-for=@Model.Name /><br />
+
+                <label asp-for=@Model.Email class="text-primary">Enter your email</label><br />
+                <input type="text" asp-for=@Model.Email />
+                <span asp-validation-for=@Model.Email /><br />
+            </div>
+        
+            <div>
+                <input type="submit" value="Sing Up" class="btn btn-primary btn-block" />
+            </div>
+        </div>
+    </form>
+</div>
